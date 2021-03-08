@@ -1,5 +1,4 @@
 import styles from "./App.module.css";
-import headerImg from "./assets/images/bg-header-desktop.svg";
 import Filter from "./components/filter/Filter";
 import CardsContainer from "./components/cardsContainer/CardsContainer";
 

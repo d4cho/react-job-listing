@@ -1,24 +1,42 @@
 import React from "react";
+import styles from "./Filter.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addFilter, removeFilter, removeAll } from "../../redux/filtersSlice";
+import { removeFilter, removeAll } from "../../redux/filtersSlice";
 
 const Filter = () => {
     const dispatch = useDispatch();
     const filters = useSelector((state) => state.filters.filters);
+    console.log(filters);
 
-    return (
-        <div>
-            <h1>FILTERS</h1>
-            <div>{filters}</div>
-            <button onClick={() => dispatch(addFilter("test"))}>
-                add filter
-            </button>
-            <button onClick={() => dispatch(removeFilter("test"))}>
-                remove filter
-            </button>
-            <button onClick={() => dispatch(removeAll())}>remove all</button>
-        </div>
-    );
+    const renderFilters = () => {
+        return filters.map((filter) => (
+            <div className={styles.filter}>
+                <span className={styles.filterText}>{filter}</span>
+                <span
+                    className={styles.x}
+                    onClick={() => dispatch(removeFilter(filter))}
+                >
+                    &#10006;
+                </span>
+            </div>
+        ));
+    };
+
+    if (filters.length > 0) {
+        return (
+            <div className={styles.container}>
+                <div className={styles.filterContainer}>{renderFilters()}</div>
+                <div
+                    className={styles.clear}
+                    onClick={() => dispatch(removeAll())}
+                >
+                    Clear
+                </div>
+            </div>
+        );
+    } else {
+        return null;
+    }
 };
 
 export default Filter;
