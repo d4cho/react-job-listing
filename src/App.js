@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import styles from "./App.module.css";
+import headerImg from "./assets/images/bg-header-desktop.svg";
+import Filter from "./components/filter/Filter";
+import CardsContainer from "./components/cardsContainer/CardsContainer";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className={styles.container}>
+            <div className={styles.header} />
+            <div className={styles.background}>
+                <CardsContainer />
+            </div>
+        </div>
+    );
 }
 
 export default App;

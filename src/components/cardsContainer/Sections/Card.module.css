@@ -1,0 +1,141 @@
+.container {
+    min-width: 80vw;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: white;
+    box-shadow: 4px 4px 10px var(--desaturated-dark-cyan);
+    border-radius: 5px;
+    border-left: 8px solid transparent;
+}
+
+.featuredContainer {
+    border-left: 8px solid var(--desaturated-dark-cyan);
+}
+
+.subContainer {
+    display: flex;
+    align-items: center;
+}
+
+.infoContainer {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.companyContainer {
+    display: flex;
+    align-items: center;
+}
+
+.new {
+    font-size: 0.8rem;
+    color: white;
+    background-color: var(--desaturated-dark-cyan);
+    border-radius: 15px;
+    min-width: 3.5rem;
+    min-height: 1.5rem;
+    margin-left: 1rem;
+    /* to center text in div */
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5rem;
+}
+
+.featured {
+    font-size: 0.8rem;
+    color: white;
+    background-color: var(--very-dark-grayish-cyan);
+    border-radius: 15px;
+    min-width: 5.5rem;
+    min-height: 1.5rem;
+    margin-left: 1rem;
+    /* to center text in div */
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5rem;
+}
+
+.company {
+    color: var(--desaturated-dark-cyan);
+    font-weight: bold;
+}
+
+.position {
+    color: var(--desaturated-dark-cyan);
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 3rem;
+    cursor: pointer;
+}
+
+.jobInfo {
+    display: flex;
+}
+
+.jobInfo > div {
+    color: var(--dark-grayish-cyan);
+    padding: 0 0.5rem;
+}
+
+.filtersContainer {
+    display: flex;
+}
+
+.filtersContainer div {
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    font-weight: bold;
+    color: var(--desaturated-dark-cyan);
+    background-color: var(--filter-tablets);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.filtersContainer div:hover {
+    color: white;
+    background-color: var(--desaturated-dark-cyan);
+}
+
+@media screen and (max-width: 1400px) {
+    .filtersContainer {
+        flex-direction: column;
+    }
+
+    .filtersContainer div {
+        margin-bottom: 1rem;
+    }
+
+    .position {
+        line-height: 2rem;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .container {
+        flex-direction: column;
+        position: relative;
+        padding: 3rem 1rem 1rem 0rem;
+        margin: 0rem 0 5rem;
+    }
+
+    .filtersContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-top: 1px solid var(--very-dark-grayish-cyan);
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        margin-left: 1rem;
+    }
+
+    .img {
+        position: absolute;
+        top: -50px;
+        left: 25px;
+    }
+}
