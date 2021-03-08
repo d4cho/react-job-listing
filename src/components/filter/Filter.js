@@ -6,7 +6,6 @@ import { removeFilter, removeAll } from "../../redux/filtersSlice";
 const Filter = () => {
     const dispatch = useDispatch();
     const filters = useSelector((state) => state.filters.filters);
-    console.log(filters);
 
     const renderFilters = () => {
         return filters.map((filter) => (

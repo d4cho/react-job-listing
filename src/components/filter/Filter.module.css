@@ -12,6 +12,7 @@
 
 .filterContainer {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .clear {
@@ -46,4 +47,10 @@
 
 .x:hover {
     background-color: var(--very-dark-grayish-cyan);
+}
+
+@media screen and (max-width: 760px) {
+    .container {
+        position: relative;
+    }
 }

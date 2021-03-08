@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { addFilter } from "../../../redux/filtersSlice";
 
 const Card = (props) => {
-    console.log(props.info);
     const dispatch = useDispatch();
 
     const {
