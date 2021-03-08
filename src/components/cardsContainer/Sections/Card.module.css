@@ -18,6 +18,7 @@
 .subContainer {
     display: flex;
     align-items: center;
+    min-width: 30rem;
 }
 
 .infoContainer {
@@ -113,6 +114,10 @@
 
     .position {
         line-height: 2rem;
+    }
+
+    .subContainer {
+        min-width: 0;
     }
 }
 
