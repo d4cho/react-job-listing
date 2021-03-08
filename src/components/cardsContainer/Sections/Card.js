@@ -1,10 +1,12 @@
 import React from "react";
 
 import styles from "./Card.module.css";
-import photosnap from "../../../assets/images/photosnap.svg";
+import { useDispatch } from "react-redux";
+import { addFilter } from "../../../redux/filtersSlice";
 
 const Card = (props) => {
     console.log(props.info);
+    const dispatch = useDispatch();
 
     const {
         id,
@@ -21,6 +23,10 @@ const Card = (props) => {
         languages,
         tools,
     } = props.info;
+
+    const handleClick = (value) => {
+        dispatch(addFilter(value));
+    };
 
     return (
         <div
@@ -54,15 +60,14 @@ const Card = (props) => {
                     </div>
                 </div>
             </div>
-            {/* working on this now */}
             <div className={styles.filtersContainer}>
-                <div>{role}</div>
-                <div>{level}</div>
+                <div onClick={() => handleClick(role)}>{role}</div>
+                <div onClick={() => handleClick(level)}>{level}</div>
                 {languages.map((language) => (
-                    <div>{language}</div>
+                    <div onClick={() => handleClick(language)}>{language}</div>
                 ))}
                 {tools.map((tool) => (
-                    <div>{tool}</div>
+                    <div onClick={() => handleClick(tool)}>{tool}</div>
                 ))}
             </div>
         </div>

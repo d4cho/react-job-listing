@@ -9,7 +9,12 @@ const filtersSlice = createSlice({
     initialState,
     reducers: {
         addFilter: (state, action) => {
-            state.filters.push(action.payload);
+            let check = state.filters.find(
+                (filter) => filter === action.payload
+            );
+            if (!check) {
+                state.filters.push(action.payload);
+            }
         },
 
         removeFilter: (state, action) => {
